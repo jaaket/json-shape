@@ -1,0 +1,53 @@
+name:                json-shape
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/githubuser/json-shape#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Author name here
+maintainer:          example@example.com
+copyright:           2017 Author name here
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.10
+extra-source-files:  README.md
+
+library
+  hs-source-dirs: src
+  ghc-options: -Wall
+  default-language: Haskell2010
+  exposed-modules: JsonShape
+  build-depends:
+      base >= 4.7 && < 5
+    , aeson
+    , containers
+    , unordered-containers
+    , vector
+    , pretty
+    , text
+
+executable json-shape
+  hs-source-dirs:      cli
+  main-is:             Main.hs
+  default-language:    Haskell2010
+  build-depends:
+      base >= 4.7 && < 5
+    , json-shape
+    , aeson
+    , bytestring
+    , text
+
+test-suite test-json-shape
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test
+  main-is: Test.hs
+  build-depends:
+      base >= 4.7 && < 5
+    , aeson
+    , bytestring
+    , containers
+    , text
+    , json-shape
+    , tasty
+    , tasty-hunit
